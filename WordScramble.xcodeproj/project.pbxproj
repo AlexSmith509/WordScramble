@@ -11,14 +11,16 @@
 		5E2A97C829FB8EF0006CE7B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A97C729FB8EF0006CE7B7 /* ContentView.swift */; };
 		5E2A97CA29FB8EF2006CE7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A97C929FB8EF2006CE7B7 /* Assets.xcassets */; };
 		5E2A97CD29FB8EF2006CE7B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A97CC29FB8EF2006CE7B7 /* Preview Assets.xcassets */; };
+		5E2A97DC29FDE0C3006CE7B7 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E2A97DB29FDE0C3006CE7B7 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5E2A97C229FB8EF0006CE7B7 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2A97C229FB8EF0006CE7B7 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = WordScramble.app; path = "/Users/alexsmith/Desktop/WordScramble/build/Debug-iphoneos/WordScramble.app"; sourceTree = "<absolute>"; };
 		5E2A97C529FB8EF0006CE7B7 /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		5E2A97C729FB8EF0006CE7B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5E2A97C929FB8EF2006CE7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E2A97CC29FB8EF2006CE7B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5E2A97DB29FDE0C3006CE7B7 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,16 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2A97C429FB8EF0006CE7B7 /* WordScramble */,
-				5E2A97C329FB8EF0006CE7B7 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		5E2A97C329FB8EF0006CE7B7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5E2A97C229FB8EF0006CE7B7 /* WordScramble.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5E2A97C429FB8EF0006CE7B7 /* WordScramble */ = {
@@ -53,6 +46,7 @@
 			children = (
 				5E2A97C529FB8EF0006CE7B7 /* WordScrambleApp.swift */,
 				5E2A97C729FB8EF0006CE7B7 /* ContentView.swift */,
+				5E2A97DB29FDE0C3006CE7B7 /* start.txt */,
 				5E2A97C929FB8EF2006CE7B7 /* Assets.xcassets */,
 				5E2A97CB29FB8EF2006CE7B7 /* Preview Content */,
 			);
@@ -111,7 +105,7 @@
 				Base,
 			);
 			mainGroup = 5E2A97B929FB8EF0006CE7B7;
-			productRefGroup = 5E2A97C329FB8EF0006CE7B7 /* Products */;
+			productRefGroup = 5E2A97B929FB8EF0006CE7B7;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -126,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2A97CD29FB8EF2006CE7B7 /* Preview Assets.xcassets in Resources */,
+				5E2A97DC29FDE0C3006CE7B7 /* start.txt in Resources */,
 				5E2A97CA29FB8EF2006CE7B7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
