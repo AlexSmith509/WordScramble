@@ -17,7 +17,7 @@ struct ContentView: View {
                 Section {
                     TextField("Enter your word", text: $newWord)
                 }
-
+                
                 Section {
                     ForEach(usedWords, id: \.self) { word in
                         Text(word)
@@ -25,10 +25,18 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(rootWord)
+            .onSubmit(addNewWord)
+                
+            }
         }
-//        func addNewWord() {
-//            let answer =  newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-//            guard answer.count > 0 else
+    func addNewWord() {
+        let answer =  newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        guard answer.count > 0 else { return }
+        
+        // extra validation to come
+        
+        usedWords.insert(answer, at: 0)
+        newWord = ""
         
     }
 }
