@@ -28,7 +28,7 @@ struct ContentView: View {
                         ForEach(usedWords, id: \.self) { word in
                             Image(systemName: "\(word.count).circle")
                             Text(word)
-                           
+                            
                         }
                     }
                 }
