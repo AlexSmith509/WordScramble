@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
-    @State private var showingError = false 
+    @State private var showingError = false
     var body: some View {
         NavigationView {
             List {
@@ -36,15 +36,30 @@ struct ContentView: View {
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
-            
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("Ok", role: .cancel) {}
+            } message: {
+                Text(errorMessage)
+            }
         }
     }
     func addNewWord() {
         let answer =  newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard answer.count > 0 else { return }
         
-        // extra validation to come
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used already", message: "Be more original")
+            return
+        }
         
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not possible", message: "You cant spell that word from '\(rootWord)'!")
+            return
+        }
+        guard isReal(word: answer) else {
+            wordError(title: "Word not recognized", message: "You cant just make them up")
+            return
+        }
         withAnimation() {
             usedWords.insert(answer, at: 0)
         }
@@ -85,7 +100,11 @@ struct ContentView: View {
         
         return misspelledRange.location == NSNotFound
     }
-    
+    func wordError(title: String, message: String) {
+        errorTitle = title
+        errorMessage = message
+        showingError = true
+    }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
