@@ -60,6 +60,10 @@ struct ContentView: View {
             wordError(title: "Word not recognized", message: "You cant just make them up")
             return
         }
+        guard isLongerthan3(word: answer) else {
+            wordError(title: "Word is too short", message: "Get more creative")
+            return
+        }
         withAnimation() {
             usedWords.insert(answer, at: 0)
         }
@@ -104,6 +108,13 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    func isLongerthan3(word: String) -> Bool {
+        if word.count < 4 {
+            return false
+        } else {
+            return true
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
