@@ -15,6 +15,10 @@ struct ContentView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var showingError = false
+    
+    @State private var showingScore = false
+    @State private var score = 1
+    
     var body: some View {
         NavigationView {
             List {
@@ -41,6 +45,12 @@ struct ContentView: View {
             } message: {
                 Text(errorMessage)
             }
+            .alert("Your score is \(score)", isPresented: $showingScore) {
+                Button("Ok", role: .cancel) {}
+            }
+            .toolbar {
+                Button("Reset word", action: startGame)
+            }
         }
     }
     func addNewWord() {
@@ -64,6 +74,13 @@ struct ContentView: View {
             wordError(title: "Word is too short", message: "Get more creative")
             return
         }
+        guard isNotRoot(word: answer) else {
+            wordError(title: "Not gonna work", message: "Get more creative")
+            return
+        }
+        let score1 = usedWords.count
+        score = score1
+        showingScore = true
         withAnimation() {
             usedWords.insert(answer, at: 0)
         }
@@ -115,6 +132,16 @@ struct ContentView: View {
         } else {
             return true
         }
+    }
+    func isNotRoot(word: String) -> Bool {
+        if word == rootWord {
+            return false
+        } else {
+            return true
+        }
+    }
+    func resetScore() {
+        score = 0
     }
 }
 struct ContentView_Previews: PreviewProvider {
